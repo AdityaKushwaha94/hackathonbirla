@@ -1,0 +1,142 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+  }
+  
+  /* Chat container */
+  .chat-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    background: #ffffff;
+  }
+  
+  /* Chat Box */
+  .chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    padding: 12px;
+    border-radius: 10px;
+    margin: 10px 0;
+    max-width: 80%;
+    background-color: #efefef;
+    word-wrap: break-word;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .message img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+  
+  .user {
+    font-weight: 500;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .content {
+    word-break: break-word;
+  }
+  
+  /* Chat Controls */
+  .controls {
+    padding: 15px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+  }
+  
+  textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+  }
+  
+  .file-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #0061f2;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .file-label img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
+  button {
+    padding: 12px 20px;
+    background-color: #0061f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0051cc;
+  }
+  
+  .file-label:hover {
+    background-color: #0051cc;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .chat-container {
+      width: 90%;
+      height: 95vh;
+    }
+  
+    textarea {
+      font-size: 14px;
+    }
+  
+    button {
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+  }
+  

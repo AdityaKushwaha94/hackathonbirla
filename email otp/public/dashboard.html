@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangBridge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar .logo img {
+      width: 30px;
+      height: 30px;
+    }
+    .navbar .logo span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2c7a7b;
+    }
+    .navbar .homepage-btn {
+      background-color: #2c7a7b;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .navbar .homepage-btn:hover {
+      background-color: #225e5e;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex-grow: 1; /* Push footer to the bottom */
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      margin: 10px 0;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .footer {
+      font-size: 0.8rem;
+      color: #6c757d;
+      text-align: center;
+      padding: 10px 0;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <span>EchoVerse</span>
+    </div>
+    <a href="/home" class="homepage-btn">Homepage</a>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <img src="image/translator-animation.gif" alt="Translator Service">
+      <h3>Translator Service</h3>
+      <p>Effortlessly translate text across multiple languages with our efficient and accurate translator service.</p>
+      <a href="/translator" class="button">Choose Translator</a>
+    </div>
+    <div class="card">
+      <img src="image/chat-animation.gif" alt="Chat App">
+      <h3>Chat App</h3>
+      <p>Engage in seamless communication with friends and family using our intuitive chat application.</p>
+      <a href="/chat" class="button">Choose Chat App</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2023 LangBridge. All rights reserved. | About Us | Contact | Support
+  </div>
+</body>
+</html>

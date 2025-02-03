@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email OTP Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Email OTP Authentication</h1>
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Username" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <input type="text" id="otp" placeholder="Enter OTP" required />
+            <div class="button-group">
+                <button type="button" id="sendOtpButton">Send OTP</button>
+                <button onclick="location.href='dashboard.html'" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                    Register
+                  </button>
+                  
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

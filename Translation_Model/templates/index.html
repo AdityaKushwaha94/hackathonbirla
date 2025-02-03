@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Text Translation</h1>
+
+    <div class="container">
+        <label for="src_lang">Source Language:</label>
+        <select id="src_lang">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+            <!-- Add more languages as required -->
+        </select>
+
+        <label for="tgt_lang">Target Language:</label>
+        <select id="tgt_lang">
+            <option value="fr">French</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+            <!-- Add more languages as required -->
+        </select>
+
+        <label for="text_input">Enter Text:</label>
+        <textarea id="text_input" rows="4" placeholder="Enter text here"></textarea>
+
+        <button onclick="translateText()">Translate</button>
+
+        <div id="result" class="result" style="display: none;">
+            <h3>Translated Text:</h3>
+            <p id="translated_text"></p>
+        </div>
+
+        <div id="error_message" class="error" style="display: none;"></div>
+    </div>
+
+    <script>
+        async function translateText() {
+            const text = document.getElementById("text_input").value;
+            const src_lang = document.getElementById("src_lang").value;
+            const tgt_lang = document.getElementById("tgt_lang").value;
+    
+            if (!text) {
+                alert("Please enter some text to translate!");
+                return;
+            }
+    
+            try {
+                const response = await fetch("http://127.0.0.1:5000/translate", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ text, src_lang, tgt_lang })
+                });
+    
+                if (!response.ok) {
+                    throw new Error("Translation failed");
+                }
+    
+                const data = await response.json();
+                document.getElementById("translated_text").innerText = data.translated_text;
+                document.getElementById("result").style.display = "block";
+                document.getElementById("error_message").style.display = "none"; // Hide error message
+    
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("error_message").innerText = `Error: ${error.message}. Please check the server.`;
+                document.getElementById("error_message").style.display = "block"; // Show error message
+                document.getElementById("result").style.display = "none"; // Hide result
+            }
+        }
+    </script>
+
+</body>
+</html>

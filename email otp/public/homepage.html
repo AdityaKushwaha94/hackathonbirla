@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoVerse</title>
+
+  <!-- Linking TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Linking Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Linking Google Font for Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-roboto">
+
+  <!-- Header Section -->
+  <header class="flex justify-between items-center p-4 bg-white shadow-md">
+    <div class="flex items-center">
+      <!-- Logo -->
+      <img alt="EchoVerse logo" class="mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/fY78iYpS86rhDL7fktX0181DdS7gAJL8Io1L7O-kr_k.jpg" width="40"/>
+      <span class="text-2xl font-bold text-green-700">
+        EchoVerse
+      </span>
+    </div>
+    <div>
+      <!-- Login Button -->
+      <button onclick="location.href='email.html'" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+        Login
+      </button>
+    </div>      
+  </header>
+
+  <!-- Main Content Section with Right-Aligned Image -->
+  <main class="p-8 flex items-center justify-center space-x-8">
+    <div class="text-left w-1/2">
+      <h1 class="text-5xl font-bold">
+        Welcome to the world of <span class="text-green-700">EchoVerse</span>
+      </h1>
+      <p class="mt-4 text-lg">
+        Break language barriers with AI-powered translation. EchoVerse helps you communicate seamlessly across cultures while preserving the essence of your words.
+      </p>
+    </div>
+
+    <!-- Image Positioned on the Right (Increased Size) -->
+    <div class="w-1/2 flex justify-end">
+      <img src="https://img.freepik.com/free-vector/translator-concept-linguist-translating-document-books-speach-multilanguage-translator-using-dictionary-translation-service-isolated-vector-illustration_613284-1762.jpg?t=st=1738386127~exp=1738389727~hmac=bc3ded97610bca1251cdb3cf3eab53284857c8df514b1fd0fa280e2b77d41fdc&w=996" 
+           alt="Translation Concept" class="w-[500px] rounded-lg shadow-lg">
+    </div>
+  </main>
+
+</body>
+</html>
